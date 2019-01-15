@@ -1,0 +1,63 @@
+body {
+	font-family: 'ZCOOL KuaiLe', cursive;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	margin-left: 1.66%;
+	font-size: 50px;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+table {
+	/*width: 50%;*/
+	margin: auto;
+}
+td {
+	width: 100px;
+	height: 100px;
+}
+
+.vertical {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.horizontal {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+img {
+	width: 30%;
+	float: left;
+	margin: 1.66%;
+}
+
+p {
+
+/*Content - Width and Height*/
+
+width: 50%;
+/*Border*/
+
+border: 2px solid blue;
+
+/*Padding*/
+
+/*padding: 10px;*/
+padding-left: 40px;
+
+/*Margin*/
+/*margin: 100px;*/
+/*margin-top: 500px;*/
+/*margin: 20px 40px 500px 100px;*/
+/*margin: 0 auto 0 auto;*/
+margin: 0 auto;
+margin: 50px 20px;
+}
+
+
+
+

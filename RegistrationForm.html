@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<h1>Register Here!</h1>
+	<form>
+		<div>
+			<label for="firstname">Firstname</label>
+			<input type="text" name="firstname">
+			<label for="lastname">Lastname</label>
+			<input type="text" name="lastname">			
+		</div>
+		<div>Gender:
+			<label for="male">Male</label>
+			<input type="radio" name="gender" id="male" value="M">
+			<label for="female">Female</label>
+			<input type="radio" name="gender" id="female" value="F">
+		</div>
+		<div>
+			<label for="regemail">Email</label>
+			<input type="email" name="regemail">
+			<label for="regpassword">Password</label>
+			<input type="password" name="regpassword" pattern=".{8,}" required title="Password must be at leat 8 characters">
+		</div>
+		<div>
+			<label for="bdate">Birthday:</label>
+			<select name="month">
+				<option>Jan</option>
+				<option>Mar</option>
+				<option>Apr</option>
+				<option>Nov</option>
+			</select>
+			<select name="day">
+				<option>01</option>
+				<option>03</option>
+				<option>04</option>
+				<option>07</option>
+				<option>22</option>
+			</select>
+			<select name="year">
+				<option>1900</option>
+				<option>1978</option>
+				<option>1982</option>
+				<option>2011</option>
+				<option>2014</option>
+			</select>
+		</div>
+		<div>
+			<input type="checkbox" name="agreed" id="agreed">
+			<label for="agreed">I agree to the terms and conditions</label>
+		</div>
+		<input type="submit" name="submit">
+	</form>
+</body>
+</html>

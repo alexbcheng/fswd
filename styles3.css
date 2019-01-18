@@ -1,3 +1,6 @@
+body {
+	padding-top: 70px;
+}
 
 .quote {
 	border-left: 5px solid #bdc3c7;
@@ -19,6 +22,17 @@
 	font-size: 2.0rem;
 }
 
-.myh1 {
-	color: #ff8800;
+.pink {
+	background: pink;
+	border: 1px dashed purple;
+}
+
+.green {
+	background: yellow;
+	border: 1px solid green;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
 }

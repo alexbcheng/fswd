@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Our Home Page</title>
-	<link href="bootstrap.css" rel="stylesheet" type="text/css" >
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" >
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"> 
   <link rel="stylesheet" type="text/css" href="styles3.css">
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
+  <div class="container">    <!-- <div class="container-fluid"> -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -15,12 +18,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Florida's Finest</a>
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>Florida's Finest</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-nav-1">
       <ul class="nav navbar-nav">
+        <!--
         <li class="active"><a href="#">Meet our staff <span class="sr-only">(current)</span></a></li>
-        <li class="dropdown">
+      -->
+        <li><a href="#">Meet our staff</a></li>
+        <li class="dropdown active">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Physical Therapy</a></li>
@@ -31,13 +37,14 @@
           </ul>
         </li>
       </ul>
-      <ul class="nav  navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right">
         <li><a href="#">About us</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Payments</a></li>
+            <li><a href="#">Schedules</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Logout</a></li>
           </ul>
@@ -49,29 +56,29 @@
 
 <div class="container">
 	<div class="jumbotron">
-		<h1><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>Are you in pain?</h1>
-		<button class="btn btn-default">Let us help you! Click here</button>
+		<h1>Are you in pain?</h1>
+		<button class="btn btn-default btn-lg">Let us help you! Click here <i class="fas fa-capsules"></i></button>
 	</div>
 
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-md-3 col-sm-6">
       <div class="thumbnail">
-      <img src="/Users/alexcheng/Pictures/alex.png">        
+      <img src="https://images.unsplash.com/photo-1545463913-918cee01fe7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=782&q=80">        
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-md-3 col-sm-6">
       <div class="thumbnail">
-      <img src="/Users/alexcheng/Pictures/vena.png">        
+      <img src="https://images.unsplash.com/photo-1514672013381-c6d0df1c8b18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">        
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-md-3 col-sm-6">
       <div class="thumbnail">
-      <img src="/Users/alexcheng/Pictures/andre_sq_20170715.jpg">        
+      <img src="https://images.unsplash.com/photo-1533094722813-3b99daa73237?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">        
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-md-3 col-sm-6">
       <div class="thumbnail">
-      <img src="/Users/alexcheng/Pictures/enzo.png">        
+      <img src="https://images.unsplash.com/photo-1514499007249-cd680c1d1060?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80">        
       </div>
     </div>
   </div>  

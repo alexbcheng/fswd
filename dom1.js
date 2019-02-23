@@ -12,3 +12,16 @@ function runOnClick() {
     this.style.color = "pink";
     console.log("Button has been clicked!")
 }
+
+var img = document.querySelector("#hplogo");
+
+var orgColor = document.body.style.background;
+
+img.addEventListener("click",function() {
+var currColor = document.body.style.background;
+if (document.body.style.background == "purple") {
+	document.body.style.background = orgColor;
+} else {
+	document.body.style.background = "purple";
+}
+})

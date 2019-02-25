@@ -9,6 +9,5 @@ var btn1 = document.querySelector("button");
 btn1.addEventListener("click", runOnClick);
 
 function runOnClick() {
-    this.style.color = "pink";
-    console.log("Button has been clicked!")
+    this.classList.toggle("purple");
 }

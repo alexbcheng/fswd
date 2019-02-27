@@ -22,14 +22,15 @@ p1Button.addEventListener("click", function() {
     p1Score++;
     p1Display.textContent = p1Score;
     if (weHaveAWinner()) {
-        
+        p1Display.classList.toggle("winner");
     }
 });
 
 p2Button.addEventListener("click", function() {
-    if (!weHaveAWinner()) {
-        p2Score++;
-        p2Display.textContent = p2Score;
+    p2Score++;
+    p2Display.textContent = p2Score;
+    if (weHaveAWinner()) {
+        p2Display.classList.toggle("winner");
     }
 })
 
@@ -42,12 +43,15 @@ resetButton.addEventListener("click", function() {
     playToNum.value = maxScore;
     maxDisplay.textContent = maxScore;
     p1Display.classList.remove("winner");
-    p1Display.classList.remove("winner");
+    p2Display.classList.remove("winner");
+    p1Button.disabled = false;
+    p2Button.disabled = false;
 });
 
 function weHaveAWinner() {
     if (p1Score == maxScore || p2Score == maxScore) {
-        p1Display.classList.toggle("winner");
+        p1Button.disabled = true;
+        p2Button.disabled = true;
         return true;
     }
 }

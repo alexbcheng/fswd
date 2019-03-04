@@ -25,7 +25,7 @@ startGame();
 function startGame() {
     colors = generateRandomColors((isGameModeHard ? 6 : 3));
     pickedColor = pickAColor();
-    rgbDisplay.textContent = pickedColor.toUpperCase();
+    rgbDisplay.textContent = pickedColor;
     for (i=0; i<squares.length; i++) {
         if (!isGameModeHard && i >= 3) {
             squares[i].style.backgroundColor = "#234561";
@@ -37,7 +37,7 @@ function startGame() {
     }
     resetBtn.textContent = "New Colors";
     msgDisplay.textContent = "";
-    header.style.backgroundColor = steelblue;
+    header.style.backgroundColor = "steelblue";
 }
 
 function squareClicked() {

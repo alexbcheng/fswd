@@ -5,10 +5,21 @@ body {
     max-width: 40rem;
     margin: 0 auto;
 }
+#header {
+    text-align: center;
+    color: white;
+    background: steelblue;
+    margin: 0;
+}
 .square {
     width: 30%;
     background: green;
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+}
+#stripe {
+    background: white;
+    height: 30px;
+    text-align: center;
 }

@@ -10,30 +10,37 @@ var colors = [];
 var pickedColor = null;
 var isGameModeHard = true;
 
-resetBtn.addEventListener("click", startGame);
-easyBtn.addEventListener("click", function() {
-    isGameModeHard = false;
-    startGame();
-})
-hardBtn.addEventListener("click", function() {
-    isGameModeHard = true;
-    startGame();
-})
-
 startGame();
 
 function startGame() {
+    resetBtn.addEventListener("click", startGame);
+    easyBtn.addEventListener("click", function() {
+        isGameModeHard = false;
+        resetGame();
+    })
+    hardBtn.addEventListener("click", function() {
+        isGameModeHard = true;
+        resetGame();
+    })
+    for (i=0; i<squares.length; i++) {
+        squares[i].addEventListener("click", squareClicked);
+    }
+    resetGame();
+}
+
+function resetGame() {
     colors = generateRandomColors((isGameModeHard ? 6 : 3));
     pickedColor = pickAColor();
     rgbDisplay.textContent = pickedColor;
+    resetBtn.textContent = "New Colors";
+    msgDisplay.textContent = "";
+    header.style.backgroundColor = "steelblue";
     for (i=0; i<squares.length; i++) {
         if (colors[i]) {
             squares[i].style.display = "block";
             squares[i].style.backgroundColor = colors[i];
-            squares[i].addEventListener("click", squareClicked);
         } else {
             squares[i].style.display = "none";
-            squares[i].removeEventListener("click", squareClicked, false);
         }
     }
     if (isGameModeHard) {
@@ -43,9 +50,6 @@ function startGame() {
         easyBtn.classList.add("selected");
         hardBtn.classList.remove("selected");    
     }
-    resetBtn.textContent = "New Colors";
-    msgDisplay.textContent = "";
-    header.style.backgroundColor = "steelblue";
 }
 
 function squareClicked() {
@@ -55,7 +59,6 @@ function squareClicked() {
         for (i=0; i<squares.length; i++) {
             if (!isGameModeHard && i >= 3) {
                 squares[i].style.backgroundColor = "#234561";
-                squares[i].removeEventListener("click", squareClicked, false);    
             } else {
                 squares[i].style.backgroundColor = pickedColor;
             }

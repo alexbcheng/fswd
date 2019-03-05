@@ -27,13 +27,21 @@ function startGame() {
     pickedColor = pickAColor();
     rgbDisplay.textContent = pickedColor;
     for (i=0; i<squares.length; i++) {
-        if (!isGameModeHard && i >= 3) {
-            squares[i].style.backgroundColor = "#234561";
-            squares[i].removeEventListener("click", squareClicked, false);
-        } else {
+        if (colors[i]) {
+            squares[i].style.display = "block";
             squares[i].style.backgroundColor = colors[i];
             squares[i].addEventListener("click", squareClicked);
+        } else {
+            squares[i].style.display = "none";
+            squares[i].removeEventListener("click", squareClicked, false);
         }
+    }
+    if (isGameModeHard) {
+        easyBtn.classList.remove("selected");
+        hardBtn.classList.add("selected");    
+    } else {
+        easyBtn.classList.add("selected");
+        hardBtn.classList.remove("selected");    
     }
     resetBtn.textContent = "New Colors";
     msgDisplay.textContent = "";

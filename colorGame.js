@@ -13,7 +13,7 @@ var isGameModeHard = true;
 startGame();
 
 function startGame() {
-    resetBtn.addEventListener("click", startGame);
+    resetBtn.addEventListener("click", resetGame);
     easyBtn.addEventListener("click", function() {
         isGameModeHard = false;
         resetGame();
@@ -57,11 +57,7 @@ function squareClicked() {
         msgDisplay.textContent = "Correct!";
         header.style.backgroundColor = pickedColor;
         for (i=0; i<squares.length; i++) {
-            if (!isGameModeHard && i >= 3) {
-                squares[i].style.backgroundColor = "#234561";
-            } else {
-                squares[i].style.backgroundColor = pickedColor;
-            }
+            squares[i].style.backgroundColor = pickedColor;
         }
         resetBtn.textContent = "Play Again?";
     } else {

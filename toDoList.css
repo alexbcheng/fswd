@@ -1,0 +1,13 @@
+body {
+    background: #cbf2b5;
+}
+#container {
+    background: #c4c3c2;
+    border: 2px solid gray;
+    max-width: 20rem;
+    margin: 0 auto;
+}
+.crossOut {
+    color: gray;
+    text-decoration: line-through;
+}

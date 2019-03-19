@@ -3,16 +3,18 @@
 <head>
     <title>To Do List!</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="toDoList.css">
 </head>
 <body>
     <div id="container">
-        <h1>TO-DO LIST</h1>
-        <input type="text"><button>+</button>
+        <h1>TO-DO LIST<i class="far fa-edit"></i></h1>
+        <input type="text" placeholder="Add New Todo">
         <ul>
-            <li><span>X</span> Open lights</li>
-            <li><span>X</span> Crack Egg</li>
-            <li><span>X</span> Cook</li>
+            <li><span><i class="fas fa-trash"></i></span> Open lights</li>
+            <li><span><i class="fas fa-trash"></i></span> Crack Egg</li>
+            <li><span><i class="fas fa-trash"></i></span> Cook</li>
         </ul>
     </div>
     <script type="text/javascript" src="toDoList.js"></script>

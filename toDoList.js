@@ -17,6 +17,6 @@ function removeItem(e) {
 
 function addItem() {
     var item2add = $('input').val();
-    $('ul').append("<li><span>X</span> "+item2add+"</li>");
+    $('ul').append("<li><span><i class='fas fa-trash'></i></span> "+item2add+"</li>");
     $('input').val("");
 }

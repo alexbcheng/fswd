@@ -3,6 +3,9 @@ $('ul').on('click', 'span', removeItem);
 $("input[type='text']").on('keypress', function(e) {
     if (e.which === 13) addItem();
 });
+$('.far').on('click', function() {
+    $("input[type='text']").fadeToggle();
+});
 
 function updateItem() {
     $(this).toggleClass("crossOut");

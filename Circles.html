@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Circles Clone</title>
+    <script text="text/javascript" src="lib/paper-full.js"></script>
+    <link rel="stylesheet" type="text/css" href="circles.css">
+    <script type="text/paperscript" canvas="myCanvas">
+        var path = new Path();
+        path.strokeColor = 'green';
+        var start = new Point(10, 100);
+        path.moveTo(start);
+        path.lineTo(start + [ 500, -50 ]);
+
+        for (var x = 0; x < 1000; x+= 100) {
+            for (var y = 0; y < 1000; y+= 100) {
+                new Path.Circle(new Point(x, y), 10).fillColor = 'rgb(135, 111, 237)';
+                //console.log("x = "+ x +"; y = " + y);
+            }
+        }
+    </script>
+</head>
+<body>
+    <canvas id="myCanvas" resize></canvas>
+</body>
+</html>

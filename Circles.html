@@ -5,18 +5,35 @@
     <script text="text/javascript" src="lib/paper-full.js"></script>
     <link rel="stylesheet" type="text/css" href="circles.css">
     <script type="text/paperscript" canvas="myCanvas">
-        var path = new Path();
-        path.strokeColor = 'green';
-        var start = new Point(10, 100);
-        path.moveTo(start);
-        path.lineTo(start + [ 500, -50 ]);
+        //var path = new Path();
+        //path.strokeColor = 'green';
+        //var start = new Point(10, 100);
+        //path.moveTo(start);
+        //path.lineTo(start + [ 500, -50 ]);
 
-        for (var x = 0; x < 1000; x+= 100) {
-            for (var y = 0; y < 1000; y+= 100) {
-                new Path.Circle(new Point(x, y), 10).fillColor = 'rgb(135, 111, 237)';
+        //for (var x = 0; x < 1000; x+= 20) {
+          //  for (var y = 0; y < 1000; y+= 20) {
+            //    new Path.Circle(new Point(x, y), 5).fillColor = 'rgb(135, 111, 237)';
                 //console.log("x = "+ x +"; y = " + y);
-            }
+            //}
+        //}
+        function random255() {
+            return Math.floor(Math.random() * 256);
         }
+
+        var circle = new Path.Circle(new Point(1, 1), 5);
+        circle.fillColor = "none";
+        function onKeyDown(event) {
+            circle.fillColor = "none";
+            circle = Path.Circle((new Point(view.size.width, view.size.height) * Point.random()), 200);
+            circle.fillColor = "rgb("+random255()+" , "+random255()+", "+random255()+")";
+        }
+
+        function onFrame(event) {
+            circle.fillColor.hue += 1;
+            circle.scale(0.9);
+        }
+        
     </script>
 </head>
 <body>

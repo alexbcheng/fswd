@@ -3,6 +3,7 @@
 <head>
     <title>Circles Clone</title>
     <script text="text/javascript" src="lib/paper-full.js"></script>
+    <script text="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
     <link rel="stylesheet" type="text/css" href="circles.css">
     <script type="text/paperscript" canvas="myCanvas">
         //var path = new Path();
@@ -17,6 +18,40 @@
                 //console.log("x = "+ x +"; y = " + y);
             //}
         //}
+        var sound = null;
+        var keyData = {
+            a: {
+                soundFile: 'sounds/bubbles.mp3'
+            },
+            b: {
+                soundFile: 'sounds/clay.mp3'
+            },
+            c: { soundFile: 'sounds/confetti.mp3' },
+            d: { soundFile: 'sounds/corona.mp3' },
+            e: { soundFile: 'sounds/dotted-spiral.mp3' },
+            f: { soundFile: 'sounds/flash-1.mp3' },
+            g: { soundFile: 'sounds/flash-2.mp3' },
+            h: { soundFile: 'sounds/flash-3.mp3' },
+            i: { soundFile: 'sounds/glimmer.mp3' },
+            j: { soundFile: 'sounds/moon.mp3' },
+            k: { soundFile: 'sounds/pinwheel.mp3' },
+            l: { soundFile: 'sounds/piston-1.mp3' },
+            m: { soundFile: 'sounds/piston-2.mp3' },
+            n: { soundFile: 'sounds/piston-3.mp3' },
+            o: { soundFile: 'sounds/prism-1.mp3' },
+            p: { soundFile: 'sounds/prism-2.mp3' },
+            q: { soundFile: 'sounds/prism-3.mp3' },
+            r: { soundFile: 'sounds/splits.mp3' },
+            s: { soundFile: 'sounds/squiggle.mp3' },
+            t: { soundFile: 'sounds/strike.mp3' },
+            u: { soundFile: 'sounds/suspension.mp3' },
+            v: { soundFile: 'sounds/timer.mp3' },
+            w: { soundFile: 'sounds/ufo.mp3' },
+            x: { soundFile: 'sounds/veil.mp3' },
+            y: { soundFile: 'sounds/wipe.mp3' },
+            z: { soundFile: 'sounds/zig-zag.mp3' }
+        }
+
         function random255() {
             return Math.floor(Math.random() * 256);
         }
@@ -24,16 +59,23 @@
         var circle = new Path.Circle(new Point(1, 1), 5);
         circle.fillColor = "none";
         function onKeyDown(event) {
-            circle.fillColor = "none";
-            circle = Path.Circle((new Point(view.size.width, view.size.height) * Point.random()), 200);
-            circle.fillColor = "rgb("+random255()+" , "+random255()+", "+random255()+")";
+            if (keyData[event.key]) {
+                circle.fillColor = "none";
+                circle = Path.Circle((new Point(view.size.width, view.size.height) * Point.random()), 200);
+                sound = new Howl({src: [keyData[event.key].soundFile]});
+                sound.play();
+                circle.fillColor = "rgb("+random255()+" , "+random255()+", "+random255()+")";    
+            }
         }
 
         function onFrame(event) {
             circle.fillColor.hue += 1;
             circle.scale(0.9);
+            if (circle.area < 1) {
+                circle.remove();
+            }            
         }
-        
+                   
     </script>
 </head>
 <body>
